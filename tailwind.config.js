@@ -19,6 +19,9 @@ module.exports = {
       maxWidth: {
         1110: '69.375rem',
       },
+      content: {
+        arrow: 'url("~/public/assets/shared/icon-arrow-right.svg")',
+      },
     },
   },
   plugins: [],
