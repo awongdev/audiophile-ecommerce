@@ -12,8 +12,8 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
     <nav>
-      <div className="bg-black">
-        <div className="mx-auto flex max-w-1110 items-center justify-between px-6 py-8 md:px-10">
+      <div className="flex justify-center bg-black px-6 md:px-10">
+        <div className="flex w-full max-w-1110 items-center justify-between py-8">
           <Image
             src={HamburgerIcon}
             alt="Hamburger menu"
