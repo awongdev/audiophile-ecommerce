@@ -1,3 +1,4 @@
+import Footer from '@/components/ui/Footer';
 import Navigation from '../components/ui/Navigation';
 import './globals.css';
 import { Manrope } from 'next/font/google';
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
