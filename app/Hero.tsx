@@ -14,7 +14,7 @@ const Hero = () => {
           <h1 className="mb-6 text-4xl font-bold uppercase leading-10 tracking-[1.285px] text-clr-white-50 md:text-[3.5rem] md:leading-[3.5rem] md:tracking-[2px]">
             XX99 Mark II Headphones
           </h1>
-          <p className="mb-7 text-[0.938rem] font-medium leading-6 text-clr-white-50 opacity-75 md:mb-10">
+          <p className="mb-7 text-15px font-medium leading-6 text-clr-white-50 opacity-75 md:mb-10">
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>

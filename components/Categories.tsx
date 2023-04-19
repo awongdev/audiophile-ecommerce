@@ -41,7 +41,7 @@ const Categories = () => {
             alt={description}
             className="absolute -top-1/4 max-h-[8.375rem] object-contain lg:max-h-[10.25rem]"
           />
-          <h2 className="text-[0.938rem] font-bold tracking-[1.07px] text-clr-black-900">
+          <h2 className="text-15px font-bold tracking-[1.07px] text-clr-black-900">
             {category}
           </h2>
           <Link

@@ -22,6 +22,9 @@ module.exports = {
       content: {
         arrow: 'url("~/public/assets/shared/icon-arrow-right.svg")',
       },
+      fontSize: {
+        '15px': '0.9375rem',
+      },
     },
   },
   plugins: [],
