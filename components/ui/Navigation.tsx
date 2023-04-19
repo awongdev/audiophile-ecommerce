@@ -11,9 +11,9 @@ import Link from 'next/link';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
-    <nav>
-      <div className="flex justify-center bg-black px-6 md:px-10">
-        <div className="flex w-full max-w-1110 items-center justify-between py-8">
+    <nav className="relative z-30">
+      <div className="flex justify-center px-6 md:px-10">
+        <div className="flex w-full max-w-1110 items-center justify-between border-b border-clr-white-50 border-opacity-10 py-8">
           <Image
             src={HamburgerIcon}
             alt="Hamburger menu"
