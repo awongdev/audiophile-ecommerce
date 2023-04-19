@@ -1,0 +1,40 @@
+import Image from 'next/image';
+import MobileHeroImg from '../public/assets/home/mobile/image-header.jpg';
+import TabletHeroImg from '../public/assets/home/tablet/image-header.jpg';
+import DesktopHeroImg from '../public/assets/home/desktop/image-hero.jpg';
+
+const Hero = () => {
+  return (
+    <section className="-mt-[5.625rem] flex justify-center bg-[#191919]">
+      <div className="relative w-full max-w-1110 lg:mx-10">
+        <div className="absolute left-2/4 top-2/4 z-[2] mt-[3.125rem] max-w-md -translate-x-2/4 -translate-y-2/4 px-6 text-center lg:left-0 lg:translate-x-0 lg:px-0 lg:text-left">
+          <p className="mb-4 text-sm uppercase tracking-[10px] text-clr-white-50 opacity-50 md:mb-6">
+            New Product
+          </p>
+          <h1 className="mb-6 text-4xl font-bold uppercase leading-10 tracking-[1.285px] text-clr-white-50 md:text-[3.5rem] md:leading-[3.5rem] md:tracking-[2px]">
+            XX99 Mark II Headphones
+          </h1>
+          <p className="mb-7 text-[0.938rem] font-medium leading-6 text-clr-white-50 opacity-75 md:mb-10">
+            Experience natural, lifelike audio and exceptional build quality
+            made for the passionate music enthusiast.
+          </p>
+          <button className="bg-clr-orange-900 px-8 py-4 text-[0.813rem] font-bold uppercase tracking-[1px] text-clr-white-50">
+            See Product
+          </button>
+        </div>
+        <picture>
+          <source media="(min-width: 64rem)" srcSet={DesktopHeroImg.src} />
+          <source media="(min-width: 48rem)" srcSet={TabletHeroImg.src} />
+          <Image
+            src={MobileHeroImg}
+            priority
+            alt="XX99 Mark 2 Headphones"
+            className="relative z-[1] mx-auto w-full object-cover md:min-h-[45.563rem]"
+          />
+        </picture>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
