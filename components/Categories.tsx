@@ -1,28 +1,28 @@
 import Image from 'next/image';
-import HeadphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
-import SpeakersImg from '../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
-import EarphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 import Link from 'next/link';
+import headphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
+import speakersImg from '../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
+import earphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 
 const category = [
   {
     category: 'HEADPHONES',
     description: 'Audiophile headphones',
-    img: HeadphonesImg,
+    img: headphonesImg,
     to: '/headphones',
     id: 1,
   },
   {
     category: 'SPEAKERS',
     description: 'Audiophile speakers',
-    img: SpeakersImg,
+    img: speakersImg,
     to: '/speakers',
     id: 2,
   },
   {
     category: 'EARPHONES',
     description: 'Audiophile earphones',
-    img: EarphonesImg,
+    img: earphonesImg,
     to: '/earphones',
     id: 3,
   },

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import MobileHeroImg from '../public/assets/home/mobile/image-header.jpg';
-import TabletHeroImg from '../public/assets/home/tablet/image-header.jpg';
-import DesktopHeroImg from '../public/assets/home/desktop/image-hero.jpg';
+import heroImgMobile from '../public/assets/home/mobile/image-header.jpg';
+import heroImgTablet from '../public/assets/home/tablet/image-header.jpg';
+import heroImgDesktop from '../public/assets/home/desktop/image-hero.jpg';
 
 const Hero = () => {
   return (
@@ -23,10 +23,10 @@ const Hero = () => {
           </button>
         </div>
         <picture>
-          <source media="(min-width: 64rem)" srcSet={DesktopHeroImg.src} />
-          <source media="(min-width: 48rem)" srcSet={TabletHeroImg.src} />
+          <source media="(min-width: 64rem)" srcSet={heroImgDesktop.src} />
+          <source media="(min-width: 48rem)" srcSet={heroImgTablet.src} />
           <Image
-            src={MobileHeroImg}
+            src={heroImgMobile}
             priority
             alt="XX99 Mark 2 Headphones"
             className="relative z-[1] mx-auto w-full object-cover md:min-h-[45.563rem]"
