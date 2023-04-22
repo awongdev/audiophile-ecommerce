@@ -6,12 +6,32 @@ import TwitterIcon from '../../public/assets/shared/icon-twitter.svg';
 import InstagramIcon from '../../public/assets/shared/icon-instagram.svg';
 import Link from 'next/link';
 
+const socialIcons = [
+  {
+    name: 'Facebook',
+    icon: FacebookIcon,
+    link: 'https://facebook.com',
+  },
+  {
+    name: 'Twitter',
+    icon: TwitterIcon,
+    link: 'https://twitter.com',
+  },
+  {
+    name: 'Instagram',
+    icon: InstagramIcon,
+    link: 'https://instagram.com',
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="relative flex justify-center bg-clr-black-850 px-6 py-14 md:px-10">
       <div className="flex w-full max-w-1110 flex-col items-center gap-12 text-center after:absolute after:left-2/4 after:top-0 after:h-1 after:w-[6.313rem] after:-translate-x-2/4 after:bg-clr-orange-900 md:items-start md:text-left md:after:left-auto after:md:translate-x-0">
         <div className="flex flex-col gap-12 lg:w-full lg:flex-row lg:justify-between">
-          <Image src={Logo} alt="logo" />
+          <Link href="/">
+            <Logo />
+          </Link>
           <NavLinks classes="flex-col flex gap-4 md:flex-row" />
         </div>
         <p className="text-15px font-medium text-white opacity-40 md:max-w-3xl lg:max-w-[33.75rem]">
@@ -25,15 +45,11 @@ const Footer = () => {
             Copyright 2021. All Rights Reserved
           </p>
           <div className="flex items-center gap-4">
-            <Link href="https://facebook.com" target="_blank">
-              <Image src={FacebookIcon} alt="facebook" />
-            </Link>
-            <Link href="https://twitter.com" target="_blank">
-              <Image src={TwitterIcon} alt="twitter" />
-            </Link>
-            <Link href="https://instagram.com" target="_blank">
-              <Image src={InstagramIcon} alt="instagram" />
-            </Link>
+            {socialIcons.map(({ name, icon: Icon, link }) => (
+              <Link href={link} key={name} target="_blank">
+                <Icon className="fill-current text-clr-white-50 transition-colors duration-200 hover:text-clr-orange-900" />
+              </Link>
+            ))}
           </div>
         </div>
       </div>

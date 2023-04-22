@@ -16,7 +16,11 @@ const NavLinks = ({ classes }: Props) => {
       className={`text-[0.813rem] font-bold tracking-[2px] text-clr-white-50 ${classes}`}
     >
       {links.map(({ title, to, id }) => (
-        <Link key={id} href={to}>
+        <Link
+          key={id}
+          href={to}
+          className="transition-colors duration-200 hover:text-clr-orange-900"
+        >
           {title}
         </Link>
       ))}
