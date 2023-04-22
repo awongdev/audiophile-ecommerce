@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import patternCircles from '../public/assets/home/desktop/pattern-circles.svg';
+import PatternCircles from '../public/assets/home/desktop/pattern-circles.svg';
 import zx9Img from '../public/assets/home/desktop/image-speaker-zx9.png';
 import zx7ImgMobile from '../public/assets/home/mobile/image-speaker-zx7.jpg';
 import zx7ImgTablet from '../public/assets/home/tablet/image-speaker-zx7.jpg';
@@ -21,11 +21,7 @@ const ProductsDisplay = () => {
                 alt="ZX9 Speaker"
                 className="relative z-10 mx-auto max-h-[12.938rem] object-contain md:max-h-[14.813rem] lg:absolute lg:-bottom-[15px] lg:left-[-50px] lg:mx-0 lg:max-h-[30.813rem]"
               />
-              <Image
-                src={patternCircles}
-                alt=""
-                className="absolute -top-[115px] left-2/4 h-[34.875rem] w-[34.875rem] -translate-x-2/4 object-cover md:-top-[275px] md:h-[59rem] md:w-[59rem] lg:bottom-[-350px] lg:left-[-150px] lg:top-auto lg:translate-x-0"
-              />
+              <PatternCircles className="absolute -top-[115px] left-2/4 h-[34.875rem] w-[34.875rem] -translate-x-2/4 object-cover md:-top-[275px] md:h-[59rem] md:w-[59rem] lg:bottom-[-350px] lg:left-[-150px] lg:top-auto lg:translate-x-0" />
             </div>
             <div className="relative z-10 mx-auto max-w-[21.813rem] px-6 text-center md:px-0 lg:mx-0 lg:mr-6 lg:text-left xl:mr-24">
               <h3 className="pb-6 text-4xl font-bold uppercase leading-10 tracking-[1.29px] text-clr-white-50 md:text-[3.5rem] md:leading-[3.5rem] md:tracking-[2px]">

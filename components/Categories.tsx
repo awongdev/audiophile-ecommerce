@@ -3,6 +3,7 @@ import Link from 'next/link';
 import headphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
 import speakersImg from '../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
 import earphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
+import Arrow from '../public/assets/shared/icon-arrow-right.svg';
 
 const category = [
   {
@@ -50,7 +51,8 @@ const Categories = () => {
               className="flex items-center p-1 text-[0.813rem] font-bold"
             >
               <span className="pr-3 leading-none opacity-50">SHOP</span>
-              <span className="content-arrow"></span>
+              {/* <span className="content-arrow"></span> */}
+              <Arrow />
             </Link>
           </div>
         ))}
