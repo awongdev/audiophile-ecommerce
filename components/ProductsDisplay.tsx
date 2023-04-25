@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import PatternCircles from '../public/assets/home/desktop/pattern-circles.svg';
 import zx9Img from '../public/assets/home/desktop/image-speaker-zx9.png';
 import zx7ImgMobile from '../public/assets/home/mobile/image-speaker-zx7.jpg';
@@ -7,6 +8,7 @@ import zx7ImgDesktop from '../public/assets/home/desktop/image-speaker-zx7.jpg';
 import yx1ImgMobile from '../public/assets/home/mobile/image-earphones-yx1.jpg';
 import yx1ImgTablet from '../public/assets/home/tablet/image-earphones-yx1.jpg';
 import yx1ImgDesktop from '../public/assets/home/desktop/image-earphones-yx1.jpg';
+import Button from './ui/Button';
 
 const ProductsDisplay = () => {
   return (
@@ -32,9 +34,9 @@ const ProductsDisplay = () => {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <button className="bg-clr-black-900 px-6 py-4 text-clr-white-50">
-                SEE PRODUCT
-              </button>
+              <Link href="/speakers/zx9-speaker">
+                <Button colors="black">SEE PRODUCT</Button>
+              </Link>
             </div>
           </div>
           {/* ZX7 Speaker */}
@@ -52,9 +54,9 @@ const ProductsDisplay = () => {
               <h3 className="mb-8 text-[1.75rem] font-bold uppercase tracking-[2px] md:leading-[3.5rem] md:tracking-[2px]">
                 ZX7 Speaker
               </h3>
-              <button className="border border-clr-black-900 px-8 py-4">
-                SEE PRODUCT
-              </button>
+              <Link href="/speakers/zx7-speaker">
+                <Button colors="transparent">SEE PRODUCT</Button>
+              </Link>
             </div>
           </div>
           {/* YX1 Earphones */}
@@ -73,9 +75,9 @@ const ProductsDisplay = () => {
                 <h3 className="mb-8 text-[1.5rem] font-bold uppercase tracking-[2px] sm:text-[1.75rem] md:leading-[3.5rem] md:tracking-[2px]">
                   YX1 Earphones
                 </h3>
-                <button className="border border-clr-black-900 px-8 py-4">
-                  SEE PRODUCT
-                </button>
+                <Link href="/earphones/yx1-earphones">
+                  <Button colors="transparent">SEE PRODUCT</Button>
+                </Link>
               </div>
             </div>
           </div>

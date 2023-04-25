@@ -2,6 +2,8 @@ import Image from 'next/image';
 import heroImgMobile from '../public/assets/home/mobile/image-header.jpg';
 import heroImgTablet from '../public/assets/home/tablet/image-header.jpg';
 import heroImgDesktop from '../public/assets/home/desktop/image-hero.jpg';
+import Button from '@/components/ui/Button';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -18,9 +20,9 @@ const Hero = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="bg-clr-orange-900 px-8 py-4 text-[0.813rem] font-bold uppercase tracking-[1px] text-clr-white-50">
-            See Product
-          </button>
+          <Link href="/headphones/xx99-mark-one-headphones">
+            <Button colors="orange">SEE PRODUCT</Button>
+          </Link>
         </div>
         <picture>
           <source media="(min-width: 64rem)" srcSet={heroImgDesktop.src} />
