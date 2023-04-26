@@ -1,4 +1,4 @@
-import Hero from './Hero';
+import Hero from '@/components/Hero';
 import CategoriesMenu from '@/components/CategoriesMenu';
 import ProductsDisplay from '@/components/ProductsDisplay';
 import About from '@/components/About';
