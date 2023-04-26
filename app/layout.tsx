@@ -1,6 +1,5 @@
 import Footer from '@/components/ui/Footer';
 import Navigation from '@/components/ui/Navigation';
-import About from '@/components/About';
 import './globals.css';
 import { Manrope } from 'next/font/google';
 
@@ -22,7 +21,6 @@ export default function RootLayout({
       <body>
         <Navigation />
         {children}
-        <About />
         <Footer />
       </body>
     </html>
