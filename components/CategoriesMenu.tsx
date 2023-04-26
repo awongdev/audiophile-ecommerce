@@ -51,7 +51,6 @@ const Categories = () => {
               className="flex items-center p-1 text-[0.813rem] font-bold"
             >
               <span className="pr-3 leading-none opacity-50">SHOP</span>
-              {/* <span className="content-arrow"></span> */}
               <Arrow />
             </Link>
           </div>
