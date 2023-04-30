@@ -8,10 +8,14 @@ import { useState } from 'react';
 import MobileNav from './MobileNav';
 import Link from 'next/link';
 
-const Navigation = () => {
+interface Props {
+  bgBlack?: boolean;
+}
+
+const Navigation = ({ bgBlack }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
-    <nav className="relative z-30">
+    <nav className={`relative z-30 ${bgBlack ? 'bg-clr-black-900' : ''}`}>
       <div className="flex justify-center px-6 md:px-10">
         <div className="flex w-full max-w-1110 items-center justify-between border-b border-clr-white-50 border-opacity-10 py-8">
           <HamburgerIcon
