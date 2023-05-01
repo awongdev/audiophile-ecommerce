@@ -32,11 +32,11 @@ const category = [
 const Categories = () => {
   return (
     <div className="flex justify-center">
-      <div className="flex w-full max-w-1110 flex-col items-center gap-16 md:flex-row md:justify-between md:gap-3">
+      <div className="flex w-full max-w-1110 flex-col items-center gap-16 sm:flex-row sm:gap-3 md:justify-between">
         {category.map(({ category, img, to, id, description }) => (
           <div
             key={id}
-            className="relative flex min-h-[10.313rem] w-full max-w-[21.875rem] flex-col items-center justify-end gap-4 rounded-lg bg-clr-white-150 pb-6 lg:min-h-[12.75rem] lg:pb-[1.875rem]"
+            className="relative flex min-h-[10.313rem] w-full  flex-col items-center justify-end gap-4 rounded-lg bg-clr-white-150 pb-6 lg:min-h-[12.75rem] lg:pb-[1.875rem]"
           >
             <Image
               src={img}

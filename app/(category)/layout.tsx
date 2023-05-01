@@ -23,7 +23,7 @@ export default function RootLayout({
         <Navigation bgBlack />
         <main>
           {children}
-          <section className="px-6 pt-10 md:px-10">
+          <section className="px-6 pt-14 md:px-10">
             <CategoriesMenu />
           </section>
           <About />
