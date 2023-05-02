@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import PatternCircles from '../public/assets/home/desktop/pattern-circles.svg';
-import zx9Img from '../public/assets/home/desktop/image-speaker-zx9.png';
-import zx7ImgMobile from '../public/assets/home/mobile/image-speaker-zx7.jpg';
-import zx7ImgTablet from '../public/assets/home/tablet/image-speaker-zx7.jpg';
-import zx7ImgDesktop from '../public/assets/home/desktop/image-speaker-zx7.jpg';
-import yx1ImgMobile from '../public/assets/home/mobile/image-earphones-yx1.jpg';
-import yx1ImgTablet from '../public/assets/home/tablet/image-earphones-yx1.jpg';
-import yx1ImgDesktop from '../public/assets/home/desktop/image-earphones-yx1.jpg';
-import Button from './ui/Button';
+import PatternCircles from '../../public/assets/home/desktop/pattern-circles.svg';
+import zx9Img from '../../public/assets/home/desktop/image-speaker-zx9.png';
+import zx7ImgMobile from '../../public/assets/home/mobile/image-speaker-zx7.jpg';
+import zx7ImgTablet from '../../public/assets/home/tablet/image-speaker-zx7.jpg';
+import zx7ImgDesktop from '../../public/assets/home/desktop/image-speaker-zx7.jpg';
+import yx1ImgMobile from '../../public/assets/home/mobile/image-earphones-yx1.jpg';
+import yx1ImgTablet from '../../public/assets/home/tablet/image-earphones-yx1.jpg';
+import yx1ImgDesktop from '../../public/assets/home/desktop/image-earphones-yx1.jpg';
+import Button from '../ui/Button';
 
 const ProductsDisplay = () => {
   return (

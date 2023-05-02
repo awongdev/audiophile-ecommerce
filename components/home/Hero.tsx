@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import heroImgMobile from '../public/assets/home/mobile/image-header.jpg';
-import heroImgTablet from '../public/assets/home/tablet/image-header.jpg';
-import heroImgDesktop from '../public/assets/home/desktop/image-hero.jpg';
-import Button from '@/components/ui/Button';
 import Link from 'next/link';
+import heroImgMobile from '../../public/assets/home/mobile/image-header.jpg';
+import heroImgTablet from '../../public/assets/home/tablet/image-header.jpg';
+import heroImgDesktop from '../../public/assets/home/desktop/image-hero.jpg';
+import Button from '@/components/ui/Button';
 
 const Hero = () => {
   return (
