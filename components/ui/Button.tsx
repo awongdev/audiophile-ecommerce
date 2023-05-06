@@ -1,5 +1,3 @@
-'use client';
-
 import React, { ReactNode } from 'react';
 
 interface Props {
@@ -23,6 +21,5 @@ const Button = ({ children, colors }: Props) => {
     </button>
   );
 };
-// color, border, text-color, hover. width?
 
 export default Button;

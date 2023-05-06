@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Logo from '../../public/assets/shared/logo.svg';
 import HamburgerIcon from '../../public/assets/shared/icon-hamburger.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';

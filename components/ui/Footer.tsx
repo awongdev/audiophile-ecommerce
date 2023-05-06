@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Logo from '../../public/assets/shared/logo.svg';
 import NavLinks from './NavLinks';
 import FacebookIcon from '../../public/assets/shared/icon-facebook.svg';
