@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import CashOnDeliveryIcon from '../public/assets/checkout/icon-cash-on-delivery.svg';
-import { inputs } from '../constants/inputs';
+import CashOnDeliveryIcon from '../../public/assets/checkout/icon-cash-on-delivery.svg';
+import { inputs } from '../../constants/inputs';
 
 const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState('');

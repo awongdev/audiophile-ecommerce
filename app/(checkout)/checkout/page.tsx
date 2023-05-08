@@ -1,9 +1,9 @@
-import Checkout from '@/components/Checkout';
+import CheckoutForm from '@/components/checkout/CheckoutForm';
 
 const page = () => {
   return (
     <>
-      <Checkout />
+      <CheckoutForm />
     </>
   );
 };
