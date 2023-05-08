@@ -1,4 +1,3 @@
-'use client';
 import useFetchItem from '@/utils/useFetchItem';
 import Features from './Features';
 import Includes from './Includes';

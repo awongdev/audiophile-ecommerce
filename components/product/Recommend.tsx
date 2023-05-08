@@ -43,7 +43,7 @@ const Recommend = ({ others }: { others: Other[] }) => {
               <h3 className="text-2xl font-bold tracking-[1.71px]">
                 {other.name}
               </h3>
-              <Link href={`/${getCategory(other.name)}/${other.slug}`}>
+              <Link href={`/${getCategory(other.slug)}/${other.slug}`}>
                 <Button colors="orange">See Product</Button>
               </Link>
             </div>
