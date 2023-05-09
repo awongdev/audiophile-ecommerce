@@ -19,7 +19,7 @@ export default function CheckoutLayout({
     <html lang="en" className={manrope.className}>
       <body>
         <Navigation bgBlack />
-        <main className="bg-clr-white-150">{children}</main>
+        <main className="bg-clr-white-150 ">{children}</main>
         <Footer />
       </body>
     </html>

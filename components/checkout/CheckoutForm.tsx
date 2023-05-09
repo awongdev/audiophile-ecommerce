@@ -12,7 +12,7 @@ const Checkout = () => {
 
   return (
     <section className="flex justify-center">
-      <div className="mx-6 mb-8 mt-6 w-full max-w-[730px] rounded-lg bg-clr-white-50 p-6 md:p-12">
+      <div className="mx-6 mb-8 w-full max-w-[45.625rem] rounded-lg bg-clr-white-50 p-6 md:mx-10 md:mb-8 md:p-12 xl:m-0 xl:min-w-[45.625rem]">
         <h1 className="mb-8 text-[1.75rem] font-bold uppercase tracking-wider md:mb-10 md:text-[2rem]">
           Checkout
         </h1>
