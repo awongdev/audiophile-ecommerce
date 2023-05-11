@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '375px',
+      },
       colors: {
         'clr-orange-900': 'hsl(22deg, 65%, 57%)',
         'clr-orange-700': 'hsl(21deg, 94%, 75%)',
