@@ -1,9 +1,10 @@
-import Footer from '@/components/ui/Footer';
-import About from '@/components/About';
-import Navigation from '@/components/ui/Navigation';
 import '../globals.css';
 import { Manrope } from 'next/font/google';
+import Navigation from '@/components/ui/Navigation';
 import CategoriesMenu from '@/components/CategoriesMenu';
+import About from '@/components/About';
+import Footer from '@/components/ui/Footer';
+import { Providers } from '@/redux/provider';
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
@@ -20,15 +21,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.className}>
       <body>
-        <Navigation bgBlack />
-        <main>
-          {children}
-          <section className="px-6 pt-14 md:px-10">
-            <CategoriesMenu />
-          </section>
-          <About />
-        </main>
-        <Footer />
+        <Providers>
+          <Navigation bgBlack />
+          <main>
+            {children}
+            <section className="px-6 pt-14 md:px-10">
+              <CategoriesMenu />
+            </section>
+            <About />
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

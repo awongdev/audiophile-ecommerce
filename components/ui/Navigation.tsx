@@ -1,18 +1,21 @@
 'use client';
+import Link from 'next/link';
 import Logo from '../../public/assets/shared/logo.svg';
 import HamburgerIcon from '../../public/assets/shared/icon-hamburger.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';
 import NavLinks from './NavLinks';
-import { useState } from 'react';
 import MobileNav from './MobileNav';
-import Link from 'next/link';
+import { setToggle } from '@/redux/features/navigationMenuSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 interface Props {
   bgBlack?: boolean;
 }
 
 const Navigation = ({ bgBlack }: Props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const isOpen = useAppSelector((state) => state.navigationMenu.isOpen);
+  const dispatch = useAppDispatch();
+
   return (
     <nav className={`relative z-30 ${bgBlack ? 'bg-clr-black-900' : ''}`}>
       <div className="flex justify-center px-6 md:px-10">
@@ -20,7 +23,7 @@ const Navigation = ({ bgBlack }: Props) => {
           <HamburgerIcon
             title="Hamburger menu"
             className="lg:hidden"
-            onClick={() => setIsMenuOpen((prevState) => !prevState)}
+            onClick={() => dispatch(setToggle())}
           />
           <Link href="/" className="md:absolute md:left-24 lg:static">
             <Logo title="Audiophile logo" />
@@ -29,7 +32,7 @@ const Navigation = ({ bgBlack }: Props) => {
           <CartIcon title="Shopping cart" />
         </div>
       </div>
-      {isMenuOpen && <MobileNav setIsMenuOpen={setIsMenuOpen} />}
+      {isOpen && <MobileNav />}
     </nav>
   );
 };

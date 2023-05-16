@@ -1,7 +1,8 @@
-import Footer from '@/components/ui/Footer';
-import Navigation from '@/components/ui/Navigation';
-import { Manrope } from 'next/font/google';
 import '../globals.css';
+import { Manrope } from 'next/font/google';
+import Navigation from '@/components/ui/Navigation';
+import Footer from '@/components/ui/Footer';
+import { Providers } from '@/redux/provider';
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
@@ -18,9 +19,11 @@ export default function CheckoutLayout({
   return (
     <html lang="en" className={manrope.className}>
       <body>
-        <Navigation bgBlack />
-        <main className="bg-clr-white-150 ">{children}</main>
-        <Footer />
+        <Providers>
+          <Navigation bgBlack />
+          <main className="bg-clr-white-150 ">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

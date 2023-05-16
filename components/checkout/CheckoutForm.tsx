@@ -1,13 +1,17 @@
 'use client';
-import React, { useState } from 'react';
 import CashOnDeliveryIcon from '../../public/assets/checkout/icon-cash-on-delivery.svg';
 import { inputs } from '../../constants/inputs';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setPaymentMethod } from '@/redux/features/paymentMethodSlice';
 
 const Checkout = () => {
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const paymentMethod = useAppSelector(
+    (state) => state.paymentMethod.paymentMethod,
+  );
+  const dispatch = useAppDispatch();
 
-  const handlePaymentMethod = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPaymentMethod(event.target.value);
+  const handlePaymentMethod = (value: string) => {
+    dispatch(setPaymentMethod(value));
   };
 
   return (
@@ -68,7 +72,7 @@ const Checkout = () => {
                   className={`flex cursor-pointer rounded-lg border border-[#c5c5c5] p-[1.125rem] ${
                     paymentMethod === input.value ? 'border-clr-orange-900' : ''
                   }`}
-                  onClick={() => setPaymentMethod(input.value)}
+                  onClick={() => handlePaymentMethod(input.value)}
                 >
                   <input
                     type={input.type}
@@ -76,7 +80,9 @@ const Checkout = () => {
                     name={input.name}
                     value={input.value}
                     checked={paymentMethod === input.value}
-                    onChange={handlePaymentMethod}
+                    onChange={(e) => {
+                      handlePaymentMethod(e.target.value);
+                    }}
                     className="mr-2 cursor-pointer border-[#c5c5c5] text-clr-orange-900 focus:ring-transparent"
                   />
                   <label
