@@ -12,11 +12,14 @@ export const navigationMenuSlice = createSlice({
   name: 'navigationMenu',
   initialState,
   reducers: {
-    setToggle: (state) => {
+    setNavToggle: (state) => {
       state.isOpen = !state.isOpen;
+    },
+    setCloseMenu: (state) => {
+      state.isOpen = false;
     },
   },
 });
 
-export const { setToggle } = navigationMenuSlice.actions;
+export const { setNavToggle, setCloseMenu } = navigationMenuSlice.actions;
 export default navigationMenuSlice.reducer;

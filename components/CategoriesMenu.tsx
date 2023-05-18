@@ -1,9 +1,12 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import headphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-headphones.png';
 import speakersImg from '../public/assets/shared/desktop/image-category-thumbnail-speakers.png';
 import earphonesImg from '../public/assets/shared/desktop/image-category-thumbnail-earphones.png';
 import Arrow from '../public/assets/shared/icon-arrow-right.svg';
+import { useAppDispatch } from '@/redux/hooks';
+import { setCloseMenu } from '@/redux/features/navigationMenuSlice';
 
 const category = [
   {
@@ -30,6 +33,8 @@ const category = [
 ];
 
 const Categories = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <div className="flex justify-center">
       <div className="flex w-full max-w-1110 flex-col items-center gap-16 sm:flex-row sm:gap-3 md:justify-between">
@@ -38,6 +43,7 @@ const Categories = () => {
             href={to}
             key={id}
             className="relative flex min-h-[10.313rem] w-full flex-col items-center justify-end gap-4 rounded-lg bg-clr-white-150 pb-6 text-clr-black-900/50 transition-colors duration-200 hover:text-clr-orange-900 lg:min-h-[12.75rem] lg:pb-[1.875rem]"
+            onClick={() => dispatch(setCloseMenu())}
           >
             <Image
               src={img}
