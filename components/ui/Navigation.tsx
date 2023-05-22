@@ -5,8 +5,8 @@ import HamburgerIcon from '../../public/assets/shared/icon-hamburger.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';
 import NavLinks from './NavLinks';
 import MobileNav from './MobileNav';
-import { setNavToggle } from '@/redux/features/navigationMenuSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { toggleNav } from '@/redux/features/navigationMenuSlice';
 
 interface Props {
   bgBlack?: boolean;
@@ -23,7 +23,7 @@ const Navigation = ({ bgBlack }: Props) => {
           <HamburgerIcon
             title="Hamburger menu"
             className="lg:hidden"
-            onClick={() => dispatch(setNavToggle())}
+            onClick={() => dispatch(toggleNav())}
           />
           <Link href="/" className="md:absolute md:left-24 lg:static">
             <Logo title="Audiophile logo" />

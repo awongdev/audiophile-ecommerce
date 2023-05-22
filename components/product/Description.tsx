@@ -1,5 +1,8 @@
+'use client';
 import Image from 'next/image';
 import Button from '../ui/Button';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { increment, decrement } from '@/redux/features/itemQuantitySlice';
 
 interface DescriptionT {
   image: {
@@ -14,6 +17,9 @@ interface DescriptionT {
 }
 
 const Description = ({ item }: { item: DescriptionT }) => {
+  const quantity = useAppSelector((state) => state.itemQuantity.quantity);
+  const dispatch = useAppDispatch();
+
   const lineBreakWord = /(headphones|earphones|speaker)/gi;
 
   return (
@@ -52,11 +58,17 @@ const Description = ({ item }: { item: DescriptionT }) => {
 
         <div className="flex flex-wrap gap-4">
           <div className="flex bg-clr-white-150 text-[13px] font-bold">
-            <button className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900">
+            <button
+              onClick={() => dispatch(decrement())}
+              className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
+            >
               -
             </button>
-            <span className="px-5 py-4">1</span>
-            <button className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900">
+            <span className="px-5 py-4">{quantity}</span>
+            <button
+              onClick={() => dispatch(increment())}
+              className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
+            >
               +
             </button>
           </div>

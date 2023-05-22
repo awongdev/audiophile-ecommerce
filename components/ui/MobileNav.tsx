@@ -1,6 +1,6 @@
 import Categories from '../CategoriesMenu';
 import { useAppDispatch } from '@/redux/hooks';
-import { setNavToggle } from '@/redux/features/navigationMenuSlice';
+import { toggleNav } from '@/redux/features/navigationMenuSlice';
 
 const MobileNav = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +14,7 @@ const MobileNav = () => {
       {/* Menu overlay that closes menu when clicked */}
       <div
         className="fixed inset-0 z-[-1] bg-clr-black-900 opacity-40"
-        onClick={() => dispatch(setNavToggle())}
+        onClick={() => dispatch(toggleNav())}
       ></div>
     </div>
   );

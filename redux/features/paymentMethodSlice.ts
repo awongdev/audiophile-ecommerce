@@ -12,11 +12,11 @@ export const paymentMethodSlice = createSlice({
   name: 'paymentMethod',
   initialState,
   reducers: {
-    setPaymentMethod: (state, action) => {
+    changePaymentMethod: (state, action) => {
       state.paymentMethod = action.payload;
     },
   },
 });
 
-export const { setPaymentMethod } = paymentMethodSlice.actions;
+export const { changePaymentMethod } = paymentMethodSlice.actions;
 export default paymentMethodSlice.reducer;

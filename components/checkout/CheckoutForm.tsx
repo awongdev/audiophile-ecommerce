@@ -2,7 +2,7 @@
 import CashOnDeliveryIcon from '../../public/assets/checkout/icon-cash-on-delivery.svg';
 import { inputs } from '../../constants/inputs';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { setPaymentMethod } from '@/redux/features/paymentMethodSlice';
+import { changePaymentMethod } from '@/redux/features/paymentMethodSlice';
 
 const Checkout = () => {
   const paymentMethod = useAppSelector(
@@ -11,7 +11,7 @@ const Checkout = () => {
   const dispatch = useAppDispatch();
 
   const handlePaymentMethod = (value: string) => {
-    dispatch(setPaymentMethod(value));
+    dispatch(changePaymentMethod(value));
   };
 
   return (
