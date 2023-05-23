@@ -64,7 +64,9 @@ const Description = ({ item }: { item: DescriptionT }) => {
             >
               -
             </button>
-            <span className="px-5 py-4">{quantity}</span>
+            <div className="px-5 py-4">
+              <p className="w-[14.25px] text-center">{quantity}</p>
+            </div>
             <button
               onClick={() => dispatch(increment())}
               className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
