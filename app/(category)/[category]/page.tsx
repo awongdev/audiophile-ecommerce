@@ -8,7 +8,7 @@ interface Params {
   };
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export function generateMetadata({ params }: Params): Metadata {
   return {
     title: params.category.charAt(0).toUpperCase() + params.category.slice(1),
   };

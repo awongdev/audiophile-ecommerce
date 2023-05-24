@@ -1,6 +1,6 @@
 import Product from '@/components/product/Product';
-import { Metadata } from 'next';
 import getItem from '@/utils/getItem';
+import { Metadata } from 'next';
 
 interface Params {
   params: {
@@ -8,14 +8,8 @@ interface Params {
   };
 }
 
-interface MetadataProps {
-  params: {
-    slug: string;
-  };
-}
-
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const [item] = await getItem(params.slug);
+export function generateMetadata({ params }: Params): Metadata {
+  const [item] = getItem(params.slug);
   const title = item.name;
   const description = item.description;
 
