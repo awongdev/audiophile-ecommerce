@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 import { useEffect } from 'react';
 import testImg from '../../public/assets/cart/image-xx59-headphones.jpg';
-import useFetchItem from '@/utils/useFetchItem';
+import getItem from '@/utils/getItem';
 import Button from '../ui/Button';
 
 const CheckoutSummary = () => {
-  const [TEST]: Product[] = useFetchItem('xx99-mark-one-headphones');
+  const [TEST]: Product[] = getItem('xx99-mark-one-headphones');
   useEffect(() => {
     console.log(TEST);
   }, [TEST]);

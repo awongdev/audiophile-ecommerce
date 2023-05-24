@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import useFetchProducts from '@/utils/useFetchProducts';
+import getProducts from '@/utils/getProducts';
 import Button from './ui/Button';
 
 const Category = ({ category }: { category: string }) => {
-  const products = useFetchProducts(category);
+  const products = getProducts(category);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import useFetchItem from '@/utils/useFetchItem';
+import getItem from '@/utils/getItem';
 import Features from './Features';
 import Includes from './Includes';
 import Gallery from './Gallery';
@@ -7,7 +7,7 @@ import Description from './Description';
 import BackButton from '../ui/BackButton';
 
 const Product = ({ slug }: { slug: string }) => {
-  const [item] = useFetchItem(slug);
+  const [item] = getItem(slug);
 
   return (
     <section>
