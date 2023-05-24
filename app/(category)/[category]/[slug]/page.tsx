@@ -1,4 +1,6 @@
 import Product from '@/components/product/Product';
+import { Metadata } from 'next';
+import getItem from '@/utils/getItem';
 
 interface Params {
   params: {
@@ -6,7 +8,24 @@ interface Params {
   };
 }
 
-const page = ({ params: { slug } }: Params) => {
+interface MetadataProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const [item] = await getItem(params.slug);
+  const title = item.name;
+  const description = item.description;
+
+  return {
+    title: title,
+    description: description,
+  };
+}
+
+const ProductPage = ({ params: { slug } }: Params) => {
   return (
     <>
       <Product slug={slug} />
@@ -14,4 +33,4 @@ const page = ({ params: { slug } }: Params) => {
   );
 };
 
-export default page;
+export default ProductPage;

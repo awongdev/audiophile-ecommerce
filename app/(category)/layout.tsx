@@ -9,11 +9,15 @@ import { Providers } from '@/redux/provider';
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
+  title: {
+    default: 'Audiophile',
+    template: '%s | Audiophile',
+  },
   description:
     'Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories.',
 };
 
-export default function RootLayout({
+export default function ProductsLayout({
   children,
 }: {
   children: React.ReactNode;

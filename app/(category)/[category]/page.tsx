@@ -1,5 +1,6 @@
 import Header from '@/components/ui/Header';
 import Category from '@/components/Category';
+import { Metadata } from 'next';
 
 interface Params {
   params: {
@@ -7,7 +8,13 @@ interface Params {
   };
 }
 
-const page = ({ params: { category } }: Params) => {
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  return {
+    title: params.category.charAt(0).toUpperCase() + params.category.slice(1),
+  };
+}
+
+const CategoryPage = ({ params: { category } }: Params) => {
   return (
     <>
       <Header category={category} />
@@ -16,4 +23,4 @@ const page = ({ params: { category } }: Params) => {
   );
 };
 
-export default page;
+export default CategoryPage;

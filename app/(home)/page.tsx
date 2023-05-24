@@ -3,7 +3,7 @@ import CategoriesMenu from '@/components/CategoriesMenu';
 import ProductsDisplay from '@/components/home/ProductsDisplay';
 import About from '@/components/About';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <Hero />

@@ -12,7 +12,7 @@ export const metadata = {
     'Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories.',
 };
 
-export default function RootLayout({
+export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode;
