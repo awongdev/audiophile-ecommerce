@@ -22,8 +22,11 @@ export const itemQuantitySlice = createSlice({
         state.quantity--;
       }
     },
+    reset: (state) => {
+      state.quantity = 1;
+    },
   },
 });
 
-export const { increment, decrement } = itemQuantitySlice.actions;
+export const { increment, decrement, reset } = itemQuantitySlice.actions;
 export default itemQuantitySlice.reducer;
