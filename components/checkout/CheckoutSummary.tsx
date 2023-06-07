@@ -20,6 +20,7 @@ interface CartItemT {
 
 const CheckoutSummary = () => {
   const cart = useAppSelector((state) => state.cart.localCart);
+  const subtotal = cartSubtotal(cart);
 
   return (
     <section className="flex justify-center self-start">
@@ -35,7 +36,7 @@ const CheckoutSummary = () => {
             >
               <Image
                 src={item.img}
-                alt=""
+                alt={item.name}
                 width={64}
                 height={64}
                 className="rounded-lg"
@@ -61,7 +62,7 @@ const CheckoutSummary = () => {
               Total
             </h4>
             <p className="text-lg font-bold">
-              $ {cartSubtotal().toLocaleString()}
+              $ {cartSubtotal(cart).toLocaleString()}
             </p>
           </div>
           <div className="flex items-center justify-between">
@@ -76,7 +77,7 @@ const CheckoutSummary = () => {
             </h4>
             <p className="text-lg font-bold">
               ${' '}
-              {calcVat().toLocaleString(undefined, {
+              {calcVat(subtotal).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
@@ -88,7 +89,7 @@ const CheckoutSummary = () => {
             </h4>
             <p className="text-lg font-bold text-clr-orange-900">
               ${' '}
-              {grandTotal().toLocaleString(undefined, {
+              {grandTotal(subtotal).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}

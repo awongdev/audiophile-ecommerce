@@ -14,7 +14,7 @@ interface LocalCartState {
 }
 
 const initialState: LocalCartState = {
-  localCart: JSON.parse(localStorage.getItem('cart') || '[]'),
+  localCart: [],
 };
 
 export const localCartSlice = createSlice({
@@ -42,13 +42,10 @@ export const localCartSlice = createSlice({
       } else {
         state.localCart.push(filteredItem);
       }
-
-      localStorage.setItem('cart', JSON.stringify(state.localCart));
     },
 
     removeAll: (state) => {
       state.localCart = [];
-      localStorage.removeItem('cart');
     },
 
     increment: (state, action) => {
@@ -57,7 +54,6 @@ export const localCartSlice = createSlice({
       );
       if (item) {
         item.quantity++;
-        localStorage.setItem('cart', JSON.stringify(state.localCart));
       }
     },
     decrement: (state, action) => {
@@ -71,7 +67,6 @@ export const localCartSlice = createSlice({
         if (item.quantity === 0) {
           state.localCart.splice(itemIndex, 1);
         }
-        localStorage.setItem('cart', JSON.stringify(state.localCart));
       }
     },
   },

@@ -95,7 +95,7 @@ const CartSummary = () => {
                 Total
               </h3>
               <p className="text-lg font-bold">
-                $ {cartSubtotal().toLocaleString()}
+                $ {cartSubtotal(cart).toLocaleString()}
               </p>
             </div>
           )}
