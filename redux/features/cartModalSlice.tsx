@@ -14,7 +14,6 @@ export const cartModalSlice = createSlice({
   reducers: {
     toggleCartModal: (state) => {
       state.isOpen = !state.isOpen;
-      document.body.classList.toggle('overflow-hidden');
     },
   },
 });

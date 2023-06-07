@@ -13,9 +13,7 @@ export const itemQuantitySlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      if (state.quantity < 10) {
-        state.quantity++;
-      }
+      state.quantity++;
     },
     decrement: (state) => {
       if (state.quantity > 1) {

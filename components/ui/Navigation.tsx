@@ -39,7 +39,6 @@ const Navigation = ({ bgBlack }: Props) => {
             className="cursor-pointer"
             onClick={() => {
               dispatch(toggleCartModal());
-              console.log('clicked');
             }}
           />
           {cartIsOpen && <CartSummary />}

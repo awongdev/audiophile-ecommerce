@@ -8,6 +8,7 @@ import {
   reset,
 } from '@/redux/features/itemQuantitySlice';
 import { useEffect } from 'react';
+import { addToCart } from '@/redux/features/localCartSlice';
 
 interface DescriptionT {
   image: {
@@ -19,6 +20,8 @@ interface DescriptionT {
   name: string;
   description: string;
   price: number;
+  slug: string;
+  id: number;
 }
 
 const Description = ({ item }: { item: DescriptionT }) => {
@@ -84,7 +87,9 @@ const Description = ({ item }: { item: DescriptionT }) => {
               +
             </button>
           </div>
-          <Button colors="orange">Add to cart</Button>
+          <div onClick={() => dispatch(addToCart([item, quantity]))}>
+            <Button colors="orange">Add to cart</Button>
+          </div>
         </div>
       </div>
     </div>
