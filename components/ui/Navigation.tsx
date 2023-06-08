@@ -21,7 +21,9 @@ const Navigation = ({ bgBlack }: Props) => {
 
   return (
     <nav
-      className={`relative z-30  ${bgBlack || true ? 'bg-clr-black-900' : ''}`}
+      className={`relative z-30  ${
+        bgBlack ? 'bg-clr-black-900' : 'bg-transparent'
+      }`}
     >
       <div className="flex justify-center px-6 md:px-10">
         <div className="flex w-full max-w-1110 items-center justify-between border-b border-clr-white-50 border-opacity-10 py-8">
