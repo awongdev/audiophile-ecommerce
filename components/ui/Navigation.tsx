@@ -20,9 +20,9 @@ const Navigation = ({ bgBlack }: Props) => {
   const cart = useAppSelector((state) => state.cart.localCart);
   const dispatch = useAppDispatch();
 
-  const quantityInCart = (cart: any) => {
+  const quantityInCart = (cart: CartItem[]) => {
     let quantity = 0;
-    cart.map((item: any) => {
+    cart.map((item: CartItem) => {
       quantity += item.quantity;
     });
     return quantity;

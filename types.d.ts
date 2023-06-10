@@ -52,3 +52,12 @@ interface Product {
     },
   ];
 }
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  slug: string;
+  img: string;
+}

@@ -1,16 +1,9 @@
-interface ItemT {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
 const vat = 0.2;
 const shipping = 50;
 
-export const cartSubtotal = (localCart: ItemT[]) => {
+export const cartSubtotal = (localCart: CartItem[]) => {
   let subtotal = 0;
-  localCart.forEach((item: ItemT) => {
+  localCart.forEach((item: CartItem) => {
     subtotal += item.quantity * item.price;
   });
   return subtotal;

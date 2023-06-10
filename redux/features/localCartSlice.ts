@@ -1,16 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface ItemT {
-  id: number;
-  name: string;
-  price: number;
-  slug: string;
-  img: string;
-  quantity: number;
-}
-
 interface LocalCartState {
-  localCart: ItemT[];
+  localCart: CartItem[];
 }
 
 const initialState: LocalCartState = {
@@ -34,7 +25,7 @@ export const localCartSlice = createSlice({
       };
 
       const existingItemIndex = state.localCart.findIndex(
-        (cartItem: ItemT) => cartItem.id === filteredItem.id,
+        (cartItem: CartItem) => cartItem.id === filteredItem.id,
       );
 
       if (existingItemIndex !== -1) {
@@ -50,7 +41,7 @@ export const localCartSlice = createSlice({
 
     increment: (state, action) => {
       const item = state.localCart.find(
-        (cartItem: ItemT) => cartItem.id === action.payload.id,
+        (cartItem: CartItem) => cartItem.id === action.payload.id,
       );
       if (item) {
         item.quantity++;
@@ -58,7 +49,7 @@ export const localCartSlice = createSlice({
     },
     decrement: (state, action) => {
       const itemIndex = state.localCart.findIndex(
-        (cartItem: ItemT) => cartItem.id === action.payload.id,
+        (cartItem: CartItem) => cartItem.id === action.payload.id,
       );
       const item = state.localCart[itemIndex];
 

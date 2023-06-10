@@ -10,15 +10,6 @@ import {
   decrement,
 } from '@/redux/features/localCartSlice';
 
-interface ItemT {
-  id: number;
-  name: string;
-  price: number;
-  slug: string;
-  img: string;
-  quantity: number;
-}
-
 const CartSummary = () => {
   const cart = useAppSelector((state) => state.cart.localCart);
   const dispatch = useAppDispatch();
@@ -45,7 +36,7 @@ const CartSummary = () => {
             ) : null}
           </div>
 
-          {cart.map((item: ItemT) => {
+          {cart.map((item: CartItem) => {
             return (
               <div
                 key={item.id}

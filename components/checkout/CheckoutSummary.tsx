@@ -9,15 +9,6 @@ import {
 } from '@/utils/cartPrice';
 import { useAppSelector } from '@/redux/hooks';
 
-interface CartItemT {
-  id: number;
-  name: string;
-  price: number;
-  slug: string;
-  img: string;
-  quantity: number;
-}
-
 const CheckoutSummary = () => {
   const cart = useAppSelector((state) => state.cart.localCart);
   const subtotal = cartSubtotal(cart);
@@ -28,7 +19,7 @@ const CheckoutSummary = () => {
         <h2 className="mb-2 text-lg font-bold uppercase tracking-[1.29px]">
           Summary
         </h2>
-        {cart.map((item: CartItemT) => {
+        {cart.map((item: CartItem) => {
           return (
             <div
               key={item.id}
