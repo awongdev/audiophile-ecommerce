@@ -26,6 +26,7 @@ const Category = ({ category }: { category: string }) => {
                     srcSet={product.categoryImage.tablet.substring(1)}
                   />
                   <Image
+                    priority
                     src={product.categoryImage.mobile.substring(1)}
                     alt={product.name}
                     width={540}

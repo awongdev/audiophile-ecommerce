@@ -33,6 +33,7 @@ const Recommend = ({ others }: { others: Other[] }) => {
                   media="(min-width: 40rem)"
                 />
                 <Image
+                  priority
                   src={other.image.mobile.substring(1)}
                   alt={other.name}
                   width={600}

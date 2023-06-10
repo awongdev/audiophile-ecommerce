@@ -26,6 +26,7 @@ const Gallery = ({ gallery, name }: GalleryT) => {
               media="(min-width: 40rem)"
             />
             <Image
+              priority
               src={gallery[key].mobile.substring(1)}
               width={635}
               height={592}
