@@ -17,7 +17,16 @@ interface Props {
 const Navigation = ({ bgBlack }: Props) => {
   const navIsOpen = useAppSelector((state) => state.navigationMenu.isOpen);
   const cartIsOpen = useAppSelector((state) => state.cartModal.isOpen);
+  const cart = useAppSelector((state) => state.cart.localCart);
   const dispatch = useAppDispatch();
+
+  const quantityInCart = (cart: any) => {
+    let quantity = 0;
+    cart.map((item: any) => {
+      quantity += item.quantity;
+    });
+    return quantity;
+  };
 
   return (
     <nav
@@ -36,13 +45,19 @@ const Navigation = ({ bgBlack }: Props) => {
             <Logo title="Audiophile logo" />
           </Link>
           <NavLinks classes="gap-8 hidden lg:flex" />
-          <CartIcon
-            title="Shopping cart"
-            className="cursor-pointer"
+          <div
+            className="relative cursor-pointer"
             onClick={() => {
               dispatch(toggleCartModal());
             }}
-          />
+          >
+            <CartIcon title="Shopping cart" />
+            {quantityInCart(cart) !== 0 && (
+              <div className="absolute -right-2/4 -top-2/4 flex min-h-[18px] min-w-[18px] items-center justify-center rounded-full bg-clr-orange-900 px-1 text-[10px] text-clr-white-50">
+                <span className="select-none">{quantityInCart(cart)}</span>
+              </div>
+            )}
+          </div>
           {cartIsOpen && <CartSummary />}
         </div>
       </div>
