@@ -3,15 +3,33 @@ import CashOnDeliveryIcon from '../../public/assets/checkout/icon-cash-on-delive
 import { inputs } from '../../constants/inputs';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { changePaymentMethod } from '@/redux/features/paymentMethodSlice';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { schema } from '../../utils/validateForm';
+import React from 'react';
 
 const Checkout = () => {
+  const dispatch = useAppDispatch();
   const paymentMethod = useAppSelector(
     (state) => state.paymentMethod.paymentMethod,
   );
-  const dispatch = useAppDispatch();
 
   const handlePaymentMethod = (value: string) => {
     dispatch(changePaymentMethod(value));
+    setValue('paymentMethod', value);
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = () => {
+    console.log('submitted');
   };
 
   return (
@@ -20,21 +38,34 @@ const Checkout = () => {
         <h1 className="mb-8 text-[1.75rem] font-bold uppercase tracking-wider md:mb-10 md:text-[2rem]">
           Checkout
         </h1>
-        <form className="grid gap-8 sm:gap-14">
+        <form
+          id="checkout"
+          className="grid gap-8 sm:gap-14"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
           {/* Billing Details */}
           <fieldset>
             <legend className="legend-styles">Billing Details</legend>
             <div className="grid gap-6 sm:gap-x-4 md:grid-cols-2">
-              {inputs.billing.map((input) => (
-                <div className="grid gap-2" key={input.id}>
-                  <label htmlFor={input.labelFor} className="label-styles">
-                    {input.labelName}
+              {inputs.billing.map((input: Input) => (
+                <div className="relative grid gap-2" key={input.id}>
+                  <label htmlFor={input.name} className="label-styles">
+                    {input.label}
                   </label>
+                  {errors.hasOwnProperty(input.name) && (
+                    <p className="absolute right-0 top-0 text-xs text-red-500">
+                      {errors[input.name as keyof Validate]?.message}
+                    </p>
+                  )}
                   <input
                     type={input.type}
-                    id={input.labelFor}
-                    className="input-styles"
+                    id={input.name}
+                    className={`input-styles ${
+                      errors.hasOwnProperty(input.name) ? '!border-red-500' : ''
+                    }`}
                     placeholder={input.placeholder}
+                    {...register(input.name as keyof Validate)}
                   />
                 </div>
               ))}
@@ -44,16 +75,30 @@ const Checkout = () => {
           <fieldset>
             <legend className="legend-styles">Shipping Info</legend>
             <div className="grid gap-6 sm:gap-x-4 md:grid-cols-2">
-              {inputs.shipping.map((input) => (
-                <div className="grid gap-2 md:first:col-span-2" key={input.id}>
-                  <label htmlFor={input.labelFor} className="label-styles">
-                    {input.labelName}
+              {inputs.shipping.map((input: Input) => (
+                <div
+                  className="relative grid gap-2 md:first:col-span-2"
+                  key={input.id}
+                >
+                  <label htmlFor={input.name} className="label-styles">
+                    {input.label}
                   </label>
+                  {errors.hasOwnProperty(input.name) && (
+                    <p className="absolute right-0 top-0 text-xs text-red-500">
+                      {errors[input.name as keyof Validate]?.message}
+                    </p>
+                  )}
                   <input
+                    onWheel={(e: React.WheelEvent<HTMLDivElement>) => {
+                      e.currentTarget.blur();
+                    }}
                     type={input.type}
-                    id={input.labelFor}
-                    className="input-styles"
+                    id={input.name}
+                    className={`input-styles ${
+                      errors.hasOwnProperty(input.name) ? '!border-red-500' : ''
+                    }`}
                     placeholder={input.placeholder}
+                    {...register(input.name as keyof Validate)}
                   />
                 </div>
               ))}
@@ -66,45 +111,63 @@ const Checkout = () => {
               <label className="label-styles block md:row-span-2 md:mb-4">
                 Payment Method
               </label>
-              {inputs.paymentMethod.map((input) => (
+              {inputs.paymentMethod.map((input: Input) => (
                 <div
                   key={input.id}
                   className={`flex cursor-pointer rounded-lg border border-[#c5c5c5] p-[1.125rem] ${
                     paymentMethod === input.value ? 'border-clr-orange-900' : ''
                   }`}
-                  onClick={() => handlePaymentMethod(input.value)}
+                  onClick={() => {
+                    if (input.value) {
+                      handlePaymentMethod(input.value);
+                    }
+                  }}
                 >
                   <input
+                    {...register('paymentMethod')}
                     type={input.type}
-                    id={input.inputId}
-                    name={input.name}
+                    id={input.name}
+                    name={input.group}
                     value={input.value}
                     checked={paymentMethod === input.value}
-                    onChange={(e) => {
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                       handlePaymentMethod(e.target.value);
                     }}
                     className="mr-2 cursor-pointer border-[#c5c5c5] text-clr-orange-900 focus:ring-transparent"
                   />
                   <label
-                    htmlFor={input.labelFor}
+                    htmlFor={input.name}
                     className="cursor-pointer text-xs font-bold"
                   >
-                    {input.labelName}
+                    {input.label}
                   </label>
                 </div>
               ))}
               {/* e-Money Details*/}
               {paymentMethod === 'emoney' &&
-                inputs.paymentDetails.map((input) => (
-                  <div className="grid gap-2 md:mt-4" key={input.id}>
+                inputs.paymentDetails.map((input: Input) => (
+                  <div className="relative grid gap-2 md:mt-4" key={input.id}>
                     <label htmlFor={input.label} className="label-styles">
                       {input.label}
                     </label>
+                    {errors.hasOwnProperty(input.name) && (
+                      <p className="absolute right-0 top-0 text-xs text-red-500">
+                        {errors[input.name as keyof Validate]?.message}
+                      </p>
+                    )}
                     <input
+                      onWheel={(e: React.WheelEvent<HTMLDivElement>) => {
+                        e.currentTarget.blur();
+                      }}
                       type={input.type}
                       id={input.label}
-                      className="input-styles"
+                      className={`input-styles ${
+                        errors.hasOwnProperty(input.name)
+                          ? '!border-red-500'
+                          : ''
+                      }`}
                       placeholder={input.placeholder}
+                      {...register(input.name as keyof Validate)}
                     />
                   </div>
                 ))}

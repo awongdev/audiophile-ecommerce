@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface PaymentMethodState {
-  paymentMethod: 'emoney' | 'cash' | undefined;
+  paymentMethod: 'emoney' | 'cash';
 }
 
 const initialState: PaymentMethodState = {
-  paymentMethod: undefined,
+  paymentMethod: 'emoney',
 };
 
 export const paymentMethodSlice = createSlice({

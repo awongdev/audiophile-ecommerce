@@ -43,7 +43,13 @@ const CartSummary = () => {
                 className="mb-2 flex flex-col justify-between gap-3 xs:flex-row xs:items-center"
               >
                 <div className="flex items-center gap-4">
-                  <Image src={item.img} width={64} height={64} alt=""></Image>
+                  <Image
+                    priority
+                    src={item.img}
+                    alt={item.name}
+                    width={64}
+                    height={64}
+                  ></Image>
                   <div>
                     <h3 className="text-15px font-bold">
                       {item.name.substring(0, item.name.lastIndexOf(' '))}

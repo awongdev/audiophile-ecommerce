@@ -61,3 +61,26 @@ interface CartItem {
   slug: string;
   img: string;
 }
+
+interface Input {
+  name: string;
+  label: string;
+  type: string;
+  id: number;
+  placeholder?: string;
+  group?: string;
+  value?: string;
+}
+
+interface Validate {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zipcode: string;
+  city: string;
+  country: string;
+  paymentMethod: string;
+  emoneyNumber: string;
+  emoneyPin: string;
+}

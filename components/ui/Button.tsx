@@ -3,9 +3,11 @@ import React, { ReactNode } from 'react';
 interface Props {
   children: ReactNode;
   colors: 'orange' | 'black' | 'transparent';
+  form?: string;
+  type?: 'button' | 'submit';
 }
 
-const Button = ({ children, colors }: Props) => {
+const Button = ({ children, colors, form, type }: Props) => {
   const classes = {
     orange: 'bg-clr-orange-900 hover:bg-clr-orange-700 text-clr-white-50',
     black: 'bg-clr-black-900 hover:bg-[#4C4C4C] text-clr-white-50',
@@ -15,6 +17,8 @@ const Button = ({ children, colors }: Props) => {
 
   return (
     <button
+      form={form}
+      type={type}
       className={`px-8 py-4 text-[0.813rem] font-bold uppercase tracking-[1px] transition-colors duration-200 ${classes[colors]} `}
     >
       {children}

@@ -87,7 +87,9 @@ const CheckoutSummary = () => {
             </p>
           </div>
         </div>
-        <Button colors="orange">Continue & Pay</Button>
+        <Button colors="orange" form="checkout" type="submit">
+          Continue & Pay
+        </Button>
       </div>
     </section>
   );
