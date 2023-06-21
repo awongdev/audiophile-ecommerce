@@ -18,7 +18,7 @@
   }
 
   .input-styles {
-    @apply rounded-lg border border-[#c5c5c5] py-[1.125rem] pl-6 text-sm font-bold caret-clr-orange-900 outline-none focus:border-black/50 focus:ring-0;
+    @apply rounded-lg border border-[#c5c5c5] py-[1.125rem] pl-6 text-base font-bold caret-clr-orange-900 outline-none focus:border-black/50 focus:ring-0 lg:text-sm;
   }
 
   .label-styles {

@@ -63,10 +63,12 @@ interface CartItem {
 }
 
 interface Input {
+  inputKey: keyof Validate;
   name: string;
   label: string;
   type: string;
   id: number;
+  inputMode?: 'numeric' | 'text' | 'email';
   placeholder?: string;
   group?: string;
   value?: string;

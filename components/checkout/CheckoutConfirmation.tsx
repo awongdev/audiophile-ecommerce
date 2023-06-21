@@ -31,10 +31,10 @@ const CheckoutConfirmation = () => {
           >
             <Transition.Child
               as={Fragment}
-              enter="duration-100 ease-in"
+              enter="duration-300 ease-in"
               enterFrom="opacity-0"
               enterTo="opacity-100"
-              leave="duration-150 ease-out"
+              leave="duration-300 ease-out"
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >

@@ -59,19 +59,19 @@ const Checkout = () => {
                   <label htmlFor={input.name} className="label-styles">
                     {input.label}
                   </label>
-                  {errors.hasOwnProperty(input.name) && (
+                  {errors[input.inputKey] && (
                     <p className="absolute right-0 top-0 text-xs text-red-500">
-                      {errors[input.name as keyof Validate]?.message}
+                      {errors[input.inputKey]?.message}
                     </p>
                   )}
                   <input
                     type={input.type}
                     id={input.name}
                     className={`input-styles ${
-                      errors.hasOwnProperty(input.name) ? '!border-red-500' : ''
+                      errors[input.inputKey] ? '!border-red-500' : ''
                     }`}
                     placeholder={input.placeholder}
-                    {...register(input.name as keyof Validate)}
+                    {...register(input.inputKey)}
                   />
                 </div>
               ))}
@@ -89,9 +89,9 @@ const Checkout = () => {
                   <label htmlFor={input.name} className="label-styles">
                     {input.label}
                   </label>
-                  {errors.hasOwnProperty(input.name) && (
+                  {errors[input.inputKey] && (
                     <p className="absolute right-0 top-0 text-xs text-red-500">
-                      {errors[input.name as keyof Validate]?.message}
+                      {errors[input.inputKey]?.message}
                     </p>
                   )}
                   <input
@@ -101,10 +101,10 @@ const Checkout = () => {
                     type={input.type}
                     id={input.name}
                     className={`input-styles ${
-                      errors.hasOwnProperty(input.name) ? '!border-red-500' : ''
+                      errors[input.inputKey] ? '!border-red-500' : ''
                     }`}
                     placeholder={input.placeholder}
-                    {...register(input.name as keyof Validate)}
+                    {...register(input.inputKey)}
                   />
                 </div>
               ))}
@@ -156,24 +156,23 @@ const Checkout = () => {
                     <label htmlFor={input.label} className="label-styles">
                       {input.label}
                     </label>
-                    {errors.hasOwnProperty(input.name) && (
+                    {errors[input.inputKey] && (
                       <p className="absolute right-0 top-0 text-xs text-red-500">
-                        {errors[input.name as keyof Validate]?.message}
+                        {errors[input.inputKey]?.message}
                       </p>
                     )}
                     <input
+                      inputMode={input.inputMode}
                       onWheel={(e: React.WheelEvent<HTMLDivElement>) => {
                         e.currentTarget.blur();
                       }}
                       type={input.type}
                       id={input.label}
                       className={`input-styles ${
-                        errors.hasOwnProperty(input.name)
-                          ? '!border-red-500'
-                          : ''
+                        errors[input.inputKey] ? '!border-red-500' : ''
                       }`}
                       placeholder={input.placeholder}
-                      {...register(input.name as keyof Validate)}
+                      {...register(input.inputKey)}
                     />
                   </div>
                 ))}

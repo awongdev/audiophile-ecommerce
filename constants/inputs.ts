@@ -1,59 +1,78 @@
-export const inputs = {
+interface InputsT {
+  [key: string]: Input[];
+}
+
+export const inputs: InputsT = {
   billing: [
     {
+      inputKey: 'name',
       name: 'name',
       label: 'Name',
       type: 'text',
       placeholder: 'Alexei Ward',
       id: 1,
+      inputMode: 'text',
     },
     {
+      inputKey: 'email',
       name: 'email',
       label: 'Email Address',
       type: 'email',
       placeholder: 'alexei@mail.com',
       id: 2,
+      inputMode: 'email',
     },
     {
+      inputKey: 'phone',
       name: 'phone',
       label: 'Phone Number',
       type: 'tel',
-      placeholder: '+1 202-556-0136',
+      placeholder: '202-556-0136',
       id: 3,
+      inputMode: 'numeric',
     },
   ],
   shipping: [
     {
+      inputKey: 'address',
       name: 'address',
       label: 'Your Address',
       type: 'text',
       placeholder: '1137 Williams Avenue',
       id: 1,
+      inputMode: 'text',
     },
     {
+      inputKey: 'zipcode',
       name: 'zipcode',
       label: 'ZIP Code',
       type: 'number',
       placeholder: '10001',
       id: 2,
+      inputMode: 'numeric',
     },
     {
+      inputKey: 'city',
       name: 'city',
       label: 'City',
       type: 'text',
       placeholder: 'New York',
       id: 3,
+      inputMode: 'text',
     },
     {
+      inputKey: 'country',
       name: 'country',
       label: 'Country',
       type: 'text',
       placeholder: 'United States',
       id: 4,
+      inputMode: 'text',
     },
   ],
   paymentMethod: [
     {
+      inputKey: 'paymentMethod',
       name: 'emoney',
       label: 'e-Money',
       type: 'radio',
@@ -62,6 +81,7 @@ export const inputs = {
       value: 'emoney',
     },
     {
+      inputKey: 'paymentMethod',
       name: 'cash',
       label: 'Cash on Delivery',
       type: 'radio',
@@ -72,18 +92,22 @@ export const inputs = {
   ],
   paymentDetails: [
     {
+      inputKey: 'emoneyNumber',
       name: 'emoneyNumber',
       label: 'e-Money Number',
       type: 'number',
       placeholder: '238521993',
       id: 1,
+      inputMode: 'numeric',
     },
     {
+      inputKey: 'emoneyPin',
       name: 'emoneyPin',
       label: 'e-Money PIN',
       type: 'number',
       placeholder: '6891',
       id: 2,
+      inputMode: 'numeric',
     },
   ],
 };
