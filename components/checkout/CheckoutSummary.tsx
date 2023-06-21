@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Button from '../ui/Button';
+import Link from 'next/link';
 import {
   itemPriceTotal,
   cartSubtotal,
@@ -47,49 +48,59 @@ const CheckoutSummary = () => {
           );
         })}
 
-        <div className="mt-2 flex flex-col gap-2">
-          <div className="flex items-center justify-between">
-            <h4 className="text-15px font-medium uppercase opacity-50">
-              Total
-            </h4>
-            <p className="text-lg font-bold">
-              $ {cartSubtotal(cart).toLocaleString()}
-            </p>
+        {cart.length === 0 ? (
+          <p className="text-center text-lg font-bold">Your cart is empty</p>
+        ) : (
+          <div className="mt-2 flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <h4 className="text-15px font-medium uppercase opacity-50">
+                Total
+              </h4>
+              <p className="text-lg font-bold">
+                $ {cartSubtotal(cart).toLocaleString()}
+              </p>
+            </div>
+            <div className="flex items-center justify-between">
+              <h4 className="text-15px font-medium uppercase opacity-50">
+                Shipping
+              </h4>
+              <p className="text-lg font-bold">$ 50</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <h4 className="text-15px font-medium uppercase opacity-50">
+                VAT(Included)
+              </h4>
+              <p className="text-lg font-bold">
+                ${' '}
+                {calcVat(subtotal).toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
+            <div className="mb-2 mt-4 flex items-center justify-between">
+              <h4 className="text-15px font-medium uppercase opacity-50">
+                Grand Total
+              </h4>
+              <p className="text-lg font-bold text-clr-orange-900">
+                ${' '}
+                {grandTotal(subtotal).toLocaleString('en-US', {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </p>
+            </div>
           </div>
-          <div className="flex items-center justify-between">
-            <h4 className="text-15px font-medium uppercase opacity-50">
-              Shipping
-            </h4>
-            <p className="text-lg font-bold">$ 50</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <h4 className="text-15px font-medium uppercase opacity-50">
-              VAT(Included)
-            </h4>
-            <p className="text-lg font-bold">
-              ${' '}
-              {calcVat(subtotal).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-            </p>
-          </div>
-          <div className="mb-2 mt-4 flex items-center justify-between">
-            <h4 className="text-15px font-medium uppercase opacity-50">
-              Grand Total
-            </h4>
-            <p className="text-lg font-bold text-clr-orange-900">
-              ${' '}
-              {grandTotal(subtotal).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
-            </p>
-          </div>
-        </div>
-        <Button colors="orange" form="checkout" type="submit">
-          Continue & Pay
-        </Button>
+        )}
+        {cart.length === 0 ? (
+          <Link href="/" className="flex flex-col">
+            <Button colors="orange">Continue Shopping</Button>
+          </Link>
+        ) : (
+          <Button colors="orange" form="checkout" type="submit">
+            Continue & Pay
+          </Button>
+        )}
       </div>
     </section>
   );

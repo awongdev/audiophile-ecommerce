@@ -6,13 +6,15 @@ import { changePaymentMethod } from '@/redux/features/paymentMethodSlice';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from '../../utils/validateForm';
-import React from 'react';
+import { openOrderModal } from '@/redux/features/orderModalSlice';
+import { clearCart } from '@/redux/features/localCartSlice';
 
 const Checkout = () => {
-  const dispatch = useAppDispatch();
+  const cart = useAppSelector((state) => state.cart.localCart);
   const paymentMethod = useAppSelector(
     (state) => state.paymentMethod.paymentMethod,
   );
+  const dispatch = useAppDispatch();
 
   const handlePaymentMethod = (value: string) => {
     dispatch(changePaymentMethod(value));
@@ -23,13 +25,17 @@ const Checkout = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
     setValue,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
   const onSubmit = () => {
-    console.log('submitted');
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+    dispatch(openOrderModal());
+    reset();
+    dispatch(clearCart());
   };
 
   return (

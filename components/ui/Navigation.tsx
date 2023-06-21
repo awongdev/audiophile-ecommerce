@@ -5,7 +5,7 @@ import HamburgerIcon from '../../public/assets/shared/icon-hamburger.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';
 import NavLinks from './NavLinks';
 import MobileNav from './MobileNav';
-import CartSummary from './CartSummary';
+import CartOverlay from './CartModal';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { toggleNav } from '@/redux/features/navigationMenuSlice';
 import { toggleCartModal } from '@/redux/features/cartModalSlice';
@@ -58,7 +58,7 @@ const Navigation = ({ bgBlack }: Props) => {
               </div>
             )}
           </div>
-          {cartIsOpen && <CartSummary />}
+          {cartIsOpen && <CartOverlay />}
         </div>
       </div>
       {navIsOpen && <MobileNav />}

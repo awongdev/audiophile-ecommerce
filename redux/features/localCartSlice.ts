@@ -35,7 +35,7 @@ export const localCartSlice = createSlice({
       }
     },
 
-    removeAll: (state) => {
+    clearCart: (state) => {
       state.localCart = [];
     },
 
@@ -63,6 +63,6 @@ export const localCartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeAll, increment, decrement } =
+export const { addToCart, clearCart, increment, decrement } =
   localCartSlice.actions;
 export default localCartSlice.reducer;

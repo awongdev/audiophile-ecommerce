@@ -5,17 +5,17 @@ import Image from 'next/image';
 import { itemPriceTotal, cartSubtotal } from '@/utils/cartPrice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import {
-  removeAll,
+  clearCart,
   increment,
   decrement,
 } from '@/redux/features/localCartSlice';
 
-const CartSummary = () => {
+const CartModal = () => {
   const cart = useAppSelector((state) => state.cart.localCart);
   const dispatch = useAppDispatch();
 
   return (
-    <section className="absolute inset-0 z-[-1] bg-clr-black-900/50 px-6">
+    <section className="absolute inset-0 z-[10] bg-clr-black-900/50 px-6">
       <div
         className="fixed inset-0 bg-clr-black-900/50"
         onClick={(e) => {
@@ -29,7 +29,7 @@ const CartSummary = () => {
             {cart.length !== 0 ? (
               <button
                 className="text-15px font-medium text-clr-black-900/50 underline transition-colors duration-200 hover:text-clr-orange-900"
-                onClick={() => dispatch(removeAll())}
+                onClick={() => dispatch(clearCart())}
               >
                 Remove all
               </button>
@@ -49,6 +49,7 @@ const CartSummary = () => {
                     alt={item.name}
                     width={64}
                     height={64}
+                    className="rounded-lg"
                   ></Image>
                   <div>
                     <h3 className="text-15px font-bold">
@@ -114,4 +115,4 @@ const CartSummary = () => {
   );
 };
 
-export default CartSummary;
+export default CartModal;

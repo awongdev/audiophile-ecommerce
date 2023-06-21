@@ -4,6 +4,7 @@ import paymentMethodReducer from './features/paymentMethodSlice';
 import itemQuantityReducer from './features/itemQuantitySlice';
 import cartModalReducer from './features/cartModalSlice';
 import localCartReducer from './features/localCartSlice';
+import orderModalReducer from './features/orderModalSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
@@ -46,6 +47,7 @@ export const store = configureStore({
     paymentMethod: paymentMethodReducer,
     itemQuantity: itemQuantityReducer,
     cartModal: cartModalReducer,
+    orderModal: orderModalReducer,
     cart: persistedReducer,
   },
   middleware: [thunk],
