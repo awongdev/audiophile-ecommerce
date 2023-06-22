@@ -1,14 +1,13 @@
 'use client';
 import Link from 'next/link';
 import Logo from '../../public/assets/shared/logo.svg';
-import HamburgerIcon from '../../public/assets/shared/icon-hamburger.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';
 import NavLinks from './NavLinks';
 import MobileNav from './MobileNav';
 import CartOverlay from './CartModal';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { toggleNav } from '@/redux/features/navigationMenuSlice';
 import { toggleCartModal } from '@/redux/features/cartModalSlice';
+import HamburgerIcon from './HamburgerIcon';
 
 interface Props {
   bgBlack?: boolean;
@@ -36,17 +35,16 @@ const Navigation = ({ bgBlack }: Props) => {
     >
       <div className="flex justify-center px-6 md:px-10">
         <div className="flex w-full max-w-1110 items-center justify-between border-b border-clr-white-50 border-opacity-10 py-8">
-          <HamburgerIcon
-            title="Hamburger menu"
-            className="lg:hidden"
-            onClick={() => dispatch(toggleNav())}
-          />
+          <div className={`relative lg:hidden ${navIsOpen && 'z-50'}`}>
+            <HamburgerIcon />
+          </div>
+
           <Link href="/" className="md:absolute md:left-24 lg:static">
             <Logo title="Audiophile logo" />
           </Link>
           <NavLinks classes="gap-8 hidden lg:flex" />
           <div
-            className="relative cursor-pointer"
+            className={`relative cursor-pointer ${cartIsOpen && 'z-50'}`}
             onClick={() => {
               dispatch(toggleCartModal());
             }}

@@ -6,7 +6,7 @@ const MobileNav = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="absolute w-full lg:hidden">
+    <div className="absolute z-40 w-full lg:hidden">
       <div className="relative z-30 rounded-b-[8px] bg-clr-white-50 px-6 pb-9 pt-20 md:px-10 md:pt-24">
         <Categories />
       </div>
