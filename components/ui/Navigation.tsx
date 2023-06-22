@@ -4,7 +4,7 @@ import Logo from '../../public/assets/shared/logo.svg';
 import CartIcon from '../../public/assets/shared/icon-cart.svg';
 import NavLinks from './NavLinks';
 import MobileNav from './MobileNav';
-import CartOverlay from './CartModal';
+import CartModal from './CartModal';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { toggleCartModal } from '@/redux/features/cartModalSlice';
 import HamburgerIcon from './HamburgerIcon';
@@ -35,7 +35,7 @@ const Navigation = ({ bgBlack }: Props) => {
     >
       <div className="flex justify-center px-6 md:px-10">
         <div className="flex w-full max-w-1110 items-center justify-between border-b border-clr-white-50 border-opacity-10 py-8">
-          <div className={`relative lg:hidden ${navIsOpen && 'z-50'}`}>
+          <div className={`relative lg:hidden ${navIsOpen ? 'z-50' : ''}`}>
             <HamburgerIcon />
           </div>
 
@@ -44,7 +44,7 @@ const Navigation = ({ bgBlack }: Props) => {
           </Link>
           <NavLinks classes="gap-8 hidden lg:flex" />
           <div
-            className={`relative cursor-pointer ${cartIsOpen && 'z-50'}`}
+            className={`relative cursor-pointer ${navIsOpen ? '' : 'z-50'}`}
             onClick={() => {
               dispatch(toggleCartModal());
             }}
@@ -56,10 +56,10 @@ const Navigation = ({ bgBlack }: Props) => {
               </div>
             )}
           </div>
-          {cartIsOpen && <CartOverlay />}
         </div>
       </div>
-      {navIsOpen && <MobileNav />}
+      <CartModal />
+      <MobileNav />
     </nav>
   );
 };

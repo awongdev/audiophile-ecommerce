@@ -13,13 +13,13 @@ const HamburgerIcon = () => {
     >
       <div
         className={`${hamburgerLine} ${
-          navIsOpen && 'translate-y-[5px] rotate-45'
+          navIsOpen ? 'translate-y-[5px] rotate-45' : ''
         }`}
       />
-      <div className={`${hamburgerLine} ${navIsOpen && 'opacity-0'}`} />
+      <div className={`${hamburgerLine} ${navIsOpen ? 'opacity-0' : ''}`} />
       <div
         className={`${hamburgerLine} ${
-          navIsOpen && '-translate-y-[5px] -rotate-45'
+          navIsOpen ? '-translate-y-[5px] -rotate-45' : ''
         }`}
       />
     </button>
