@@ -112,18 +112,18 @@ const CartModal = () => {
                 </p>
               </div>
             )}
-            {cart.length === 0 ? (
-              <div
-                className="flex flex-col"
-                onClick={() => dispatch(toggleCartModal())}
-              >
+            <div
+              className="flex flex-col"
+              onClick={() => dispatch(toggleCartModal())}
+            >
+              {cart.length === 0 ? (
                 <Button colors="orange">Continue Shopping</Button>
-              </div>
-            ) : (
-              <Link href="/checkout" className="flex flex-col">
-                <Button colors="orange">Checkout</Button>
-              </Link>
-            )}
+              ) : (
+                <Link href="/checkout" className="flex flex-col">
+                  <Button colors="orange">Checkout</Button>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>

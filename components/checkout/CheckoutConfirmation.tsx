@@ -126,7 +126,10 @@ const CheckoutConfirmation = () => {
                   <Link
                     href="/"
                     className="flex flex-col"
-                    onClick={() => sessionStorage.removeItem('cart')}
+                    onClick={() => {
+                      sessionStorage.removeItem('cart');
+                      dispatch(closeOrderModal());
+                    }}
                   >
                     <Button colors="orange">Back to home</Button>
                   </Link>

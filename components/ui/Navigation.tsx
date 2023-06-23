@@ -8,16 +8,13 @@ import CartModal from './CartModal';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { toggleCartModal } from '@/redux/features/cartModalSlice';
 import HamburgerIcon from './HamburgerIcon';
+import { useSelectedLayoutSegment } from 'next/navigation';
 
-interface Props {
-  bgBlack?: boolean;
-}
-
-const Navigation = ({ bgBlack }: Props) => {
+const Navigation = () => {
   const navIsOpen = useAppSelector((state) => state.navigationMenu.isOpen);
-  const cartIsOpen = useAppSelector((state) => state.cartModal.isOpen);
   const cart = useAppSelector((state) => state.cart.localCart);
   const dispatch = useAppDispatch();
+  const segment = useSelectedLayoutSegment();
 
   const quantityInCart = (cart: CartItem[]) => {
     let quantity = 0;
@@ -29,8 +26,8 @@ const Navigation = ({ bgBlack }: Props) => {
 
   return (
     <nav
-      className={`relative z-30  ${
-        bgBlack ? 'bg-clr-black-900' : 'bg-transparent'
+      className={`relative z-30 ${
+        segment === null ? 'bg-transparent' : 'bg-clr-black-900'
       }`}
     >
       <div className="flex justify-center px-6 md:px-10">
