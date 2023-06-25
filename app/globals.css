@@ -25,3 +25,8 @@
     @apply text-xs font-bold;
   }
 }
+
+:root {
+  --toastify-color-success: hsl(22deg, 65%, 57%) !important;
+  --toastify-toast-width: auto !important;
+}

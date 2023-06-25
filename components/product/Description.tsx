@@ -2,13 +2,9 @@
 import Image from 'next/image';
 import Button from '../ui/Button';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import {
-  increment,
-  decrement,
-  reset,
-} from '@/redux/features/itemQuantitySlice';
-import { useEffect } from 'react';
+import { increment, decrement } from '@/redux/features/itemQuantitySlice';
 import { addToCart } from '@/redux/features/localCartSlice';
+import { toast } from 'react-toastify';
 
 interface DescriptionT {
   image: {
@@ -28,12 +24,6 @@ const Description = ({ item }: { item: DescriptionT }) => {
   const quantity = useAppSelector((state) => state.itemQuantity.quantity);
   const dispatch = useAppDispatch();
   const lineBreakWord = /(headphones|earphones|speaker)/gi;
-
-  useEffect(() => {
-    return () => {
-      dispatch(reset());
-    };
-  }, [dispatch]);
 
   return (
     <div className="sm:flex sm:items-center sm:justify-between sm:gap-6 md:gap-16">
@@ -87,7 +77,13 @@ const Description = ({ item }: { item: DescriptionT }) => {
               +
             </button>
           </div>
-          <div onClick={() => dispatch(addToCart([item, quantity]))}>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(addToCart([item, quantity]));
+              toast.success(`${item.name} added to cart`);
+            }}
+          >
             <Button colors="orange">Add to cart</Button>
           </div>
         </div>
