@@ -5,11 +5,11 @@ export const getCategory = (slug: string) => {
   return category;
 };
 
-export const getCategories = () => {
+export const getCategoryList = () => {
   const products = require('../db/data/data.json');
   const categories = products.map((item: Product) => item.category);
-  const uniqueCategories = categories.filter(
+  const categoryArr = categories.filter(
     (item: string, index: number) => categories.indexOf(item) === index,
   );
-  return uniqueCategories;
+  return categoryArr;
 };

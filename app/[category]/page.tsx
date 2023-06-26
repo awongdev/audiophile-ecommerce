@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import CategoriesMenu from '@/components/CategoriesMenu';
 import About from '@/components/About';
 import { notFound } from 'next/navigation';
-import { getCategories } from '@/utils/getCategory';
+import { getCategoryList } from '@/utils/getCategory';
 
 interface Params {
   params: {
@@ -24,8 +24,8 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 const CategoryPage = ({ params: { category } }: Params) => {
-  const categoriesArr = getCategories();
-  if (!categoriesArr.includes(category)) {
+  const categoryArray = getCategoryList();
+  if (!categoryArray.includes(category)) {
     return notFound();
   } else {
     return (

@@ -114,9 +114,9 @@ const Checkout = () => {
           <fieldset>
             <legend className="legend-styles">Payment Details</legend>
             <div className="grid gap-4 md:grid-cols-2">
-              <label className="label-styles block md:row-span-2 md:mb-4">
+              <h3 className="label-styles block md:row-span-2 md:mb-4">
                 Payment Method
-              </label>
+              </h3>
               {inputs.paymentMethod.map((input: Input) => (
                 <div
                   key={input.id}

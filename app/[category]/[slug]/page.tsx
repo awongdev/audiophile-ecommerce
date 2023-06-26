@@ -1,9 +1,9 @@
 import Product from '@/components/product/Product';
 import CategoriesMenu from '@/components/CategoriesMenu';
 import About from '@/components/About';
-import getItem from '@/utils/getItem';
+import { getItem } from '@/utils/getProducts';
 import { Metadata } from 'next';
-import { getSlugs } from '@/utils/getProducts';
+import { getSlugList } from '@/utils/getProducts';
 import { notFound } from 'next/navigation';
 
 interface Params {
@@ -24,8 +24,8 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 const ProductPage = ({ params: { slug } }: Params) => {
-  const slugList = getSlugs();
-  if (!slugList.includes(slug)) {
+  const slugArr = getSlugList();
+  if (!slugArr.includes(slug)) {
     return notFound();
   } else {
     return (

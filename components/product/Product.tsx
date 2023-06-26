@@ -1,4 +1,4 @@
-import getItem from '@/utils/getItem';
+import { getItem } from '@/utils/getProducts';
 import Features from './Features';
 import Includes from './Includes';
 import Gallery from './Gallery';

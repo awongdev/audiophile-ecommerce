@@ -1,8 +1,13 @@
 'use client';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Button from '../ui/Button';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { increment, decrement } from '@/redux/features/itemQuantitySlice';
+import {
+  increment,
+  decrement,
+  reset,
+} from '@/redux/features/itemQuantitySlice';
 import { addToCart } from '@/redux/features/localCartSlice';
 import { toast } from 'react-toastify';
 
@@ -24,6 +29,12 @@ const Description = ({ item }: { item: DescriptionT }) => {
   const quantity = useAppSelector((state) => state.itemQuantity.quantity);
   const dispatch = useAppDispatch();
   const lineBreakWord = /(headphones|earphones|speaker)/gi;
+
+  useEffect(() => {
+    return () => {
+      dispatch(reset());
+    };
+  }, [dispatch]);
 
   return (
     <div className="sm:flex sm:items-center sm:justify-between sm:gap-6 md:gap-16">

@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import getProducts from '@/utils/getProducts';
+import { getCategoryProducts } from '@/utils/getProducts';
 import Button from './ui/Button';
 
 const Category = ({ category }: { category: string }) => {
-  const products = getProducts(category);
+  const products = getCategoryProducts(category);
 
   return (
     <>
