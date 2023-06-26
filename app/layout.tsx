@@ -12,6 +12,25 @@ export const metadata = {
   title: 'Audiophile',
   description:
     'Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories.',
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      url: '/assets/favicon/favicon-32x32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      url: '/assets/favicon/favicon-16x16.png',
+    },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      url: '/favicon/apple-touch-icon.png',
+    },
+  ],
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
