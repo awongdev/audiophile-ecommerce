@@ -5,6 +5,7 @@ import Footer from '@/components/ui/Footer';
 import { Providers } from '@/redux/provider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap' });
 
@@ -28,6 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {children}
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
