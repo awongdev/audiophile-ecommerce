@@ -27,7 +27,7 @@ const Navigation = () => {
   return (
     <nav
       className={`relative z-30 ${
-        segment === null ? 'bg-transparent' : 'bg-clr-black-900'
+        segment === null ? 'bg-[#191919]' : 'bg-clr-black-900'
       }`}
     >
       <div className="flex justify-center px-6 md:px-10">
@@ -36,11 +36,16 @@ const Navigation = () => {
             <HamburgerIcon />
           </div>
 
-          <Link href="/" className="md:absolute md:left-24 lg:static">
+          <Link
+            href="/"
+            className="md:absolute md:left-24 lg:static"
+            aria-label="Home"
+          >
             <Logo title="Audiophile logo" />
           </Link>
           <NavLinks classes="gap-8 hidden lg:flex" />
-          <div
+          <button
+            aria-label="Toggle cart"
             className={`relative cursor-pointer ${navIsOpen ? '' : 'z-50'}`}
             onClick={() => {
               dispatch(toggleCartModal());
@@ -52,7 +57,7 @@ const Navigation = () => {
                 <span className="select-none">{quantityInCart(cart)}</span>
               </div>
             )}
-          </div>
+          </button>
         </div>
       </div>
       <CartModal />

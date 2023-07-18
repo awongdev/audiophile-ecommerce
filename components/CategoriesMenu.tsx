@@ -50,9 +50,9 @@ const Categories = () => {
               alt={description}
               className="absolute -top-1/4 max-h-[8.375rem] max-w-[170px] object-contain lg:max-h-[10.25rem]"
             />
-            <h2 className="text-15px font-bold tracking-[1.07px] text-clr-black-900">
+            <p className="text-15px font-bold tracking-[1.07px] text-clr-black-900">
               {category}
-            </h2>
+            </p>
             <div className="flex items-center p-1 text-[0.813rem] font-bold">
               <span className="pr-3 leading-none">SHOP</span>
               <Arrow />

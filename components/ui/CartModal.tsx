@@ -79,6 +79,7 @@ const CartModal = () => {
                   </div>
                   <div className="flex items-center">
                     <button
+                      aria-label="Decrease quantity"
                       className="bg-clr-white-150 px-3 py-1.5 text-[0.813rem] text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
                       onClick={() => dispatch(decrement(item))}
                     >
@@ -88,6 +89,7 @@ const CartModal = () => {
                       {item.quantity}
                     </p>
                     <button
+                      aria-label="Increase quantity"
                       className="bg-clr-white-150 px-3 py-1.5 text-[0.813rem] text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
                       onClick={() => dispatch(increment(item))}
                     >

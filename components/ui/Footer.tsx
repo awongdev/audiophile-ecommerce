@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className="relative flex justify-center bg-clr-black-850 px-6 py-14 md:px-10">
       <div className="flex w-full max-w-1110 flex-col items-center gap-12 text-center after:absolute after:left-2/4 after:top-0 after:h-1 after:w-[6.313rem] after:-translate-x-2/4 after:bg-clr-orange-900 md:items-start md:text-left md:after:left-auto after:md:translate-x-0">
         <div className="flex flex-col gap-12 lg:w-full lg:flex-row lg:justify-between">
-          <Link href="/">
+          <Link href="/" aria-label="Home">
             <Logo />
           </Link>
           <NavLinks classes="flex-col flex gap-4 md:flex-row" />
@@ -45,7 +45,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-4">
             {socialIcons.map(({ name, icon: Icon, link }) => (
-              <Link href={link} key={name} target="_blank">
+              <Link href={link} key={name} target="_blank" aria-label={name}>
                 <Icon className="fill-current text-clr-white-50 transition-colors duration-200 hover:text-clr-orange-900" />
               </Link>
             ))}

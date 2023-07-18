@@ -29,15 +29,15 @@ const ProductsDisplay = () => {
               />
             </div>
             <div className="relative z-10 mx-auto max-w-[21.813rem] px-6 text-center md:px-0 lg:mx-0 lg:mr-6 lg:text-left xl:mr-24">
-              <h3 className="pb-6 text-4xl font-bold uppercase leading-10 tracking-[1.29px] text-clr-white-50 md:text-[3.5rem] md:leading-[3.5rem] md:tracking-[2px]">
+              <h2 className="pb-6 text-4xl font-bold uppercase leading-10 tracking-[1.29px] text-clr-white-50 md:text-[3.5rem] md:leading-[3.5rem] md:tracking-[2px]">
                 ZX9 <br />
                 Speaker
-              </h3>
+              </h2>
               <p className="pb-6 text-15px font-medium leading-6 text-clr-white-50 opacity-75 md:pb-10">
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <Link href="/speakers/zx9-speaker">
+              <Link href="/speakers/zx9-speaker" className="inline-block">
                 <Button colors="black">SEE PRODUCT</Button>
               </Link>
             </div>
@@ -54,10 +54,10 @@ const ProductsDisplay = () => {
               />
             </picture>
             <div className="absolute left-6 top-2/4 z-10 -translate-y-2/4 sm:left-16">
-              <h3 className="mb-8 text-[1.75rem] font-bold uppercase tracking-[2px] md:leading-[3.5rem] md:tracking-[2px]">
+              <h2 className="mb-8 text-[1.75rem] font-bold uppercase tracking-[2px] md:leading-[3.5rem] md:tracking-[2px]">
                 ZX7 Speaker
-              </h3>
-              <Link href="/speakers/zx7-speaker">
+              </h2>
+              <Link href="/speakers/zx7-speaker" className="inline-block">
                 <Button colors="transparent">SEE PRODUCT</Button>
               </Link>
             </div>
@@ -75,10 +75,10 @@ const ProductsDisplay = () => {
             </picture>
             <div className="relative flex aspect-[327/200] flex-1 flex-col items-start justify-center rounded-lg bg-clr-white-150 md:aspect-auto">
               <div className="absolute left-6 sm:left-16 md:left-12 lg:left-16">
-                <h3 className="mb-8 text-[1.5rem] font-bold uppercase tracking-[2px] sm:text-[1.75rem] md:leading-[3.5rem] md:tracking-[2px]">
+                <h2 className="mb-8 text-[1.5rem] font-bold uppercase tracking-[2px] sm:text-[1.75rem] md:leading-[3.5rem] md:tracking-[2px]">
                   YX1 Earphones
-                </h3>
-                <Link href="/earphones/yx1-earphones">
+                </h2>
+                <Link href="/earphones/yx1-earphones" className="inline-block">
                   <Button colors="transparent">SEE PRODUCT</Button>
                 </Link>
               </div>

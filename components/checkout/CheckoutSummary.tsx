@@ -97,9 +97,9 @@ const CheckoutSummary = () => {
             <Button colors="orange">Continue Shopping</Button>
           </Link>
         ) : (
-          <Button colors="orange" form="checkout" type="submit">
-            Continue & Pay
-          </Button>
+          <button form="checkout" type="submit">
+            <Button colors="orange">Continue & Pay</Button>
+          </button>
         )}
       </div>
     </section>

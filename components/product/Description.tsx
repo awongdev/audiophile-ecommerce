@@ -73,6 +73,7 @@ const Description = ({ item }: { item: DescriptionT }) => {
         <div className="flex flex-wrap gap-4">
           <div className="flex bg-clr-white-150 text-[13px] font-bold">
             <button
+              aria-label="Decrease quantity"
               onClick={() => dispatch(decrement())}
               className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
             >
@@ -82,6 +83,7 @@ const Description = ({ item }: { item: DescriptionT }) => {
               <p className="w-[14.25px] text-center">{quantity}</p>
             </div>
             <button
+              aria-label="Increase quantity"
               onClick={() => dispatch(increment())}
               className="px-5 py-4 text-[#c5c5c5] transition-colors duration-200 hover:bg-[#E3E3E3] hover:text-clr-orange-900"
             >
