@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/AceDub/audiophile-ecommerce](https://github.com/AceDub/audiophile-ecommerce)
-- Live Site URL: [https://audiophile-acedub.vercel.app/](https://audiophile-acedub.vercel.app/)
+- Solution URL: [https://github.com/awongdev/audiophile-ecommerce](https://github.com/awongdev/audiophile-ecommerce)
+- Live Site URL: [https://audiophile-awongdev.vercel.app/](https://audiophile-awongdev.vercel.app/)
 
 ## My process
 
@@ -74,4 +74,4 @@ Throughout this project, I would often run into a TypeScript error that I would 
 ## Author
 
 - Frontend Mentor - [@AceDub](https://www.frontendmentor.io/profile/AceDub)
-- GitHub - [@AceDub](https://github.com/AceDub)
+- GitHub - [@awongdev](https://github.com/awongdev)
